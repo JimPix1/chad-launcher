@@ -1,5 +1,8 @@
 # chad-launcher
 A dmenu script for launching games.
 
-Note that this patch utilises the grid patch and will be necessary to use the script.
-My own dmenu build can be found [here](https://github.com/JimPix1/dotfiles). You can add the patch to your own build [here](https://tools.suckless.org/dmenu/patches/grid).
+There are two versions of chad-launcher, one that utilizes the grid patch and one that doesn't. The grid patch lets you use columns and lets you see all of your games on screen, the version without the grid patch will display the games as one list.
+
+My own dmenu build can be found [here](https://github.com/JimPix1/dotfiles). (Has the grid patch.)
+
+You can add the grid patch [here](https://tools.suckless.org/dmenu/patches/grid).
