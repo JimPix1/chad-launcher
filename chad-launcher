@@ -30,7 +30,7 @@ fi
 
 # Show the list of your playable games in dmenu
 game="$(exa -D | sed 's/\./ /g;/\-jc141/d' | \
-	dmenu -l "$LINES" -1 -i -fn mono-10 -g 4 -o 1 -p 'Choose game:')" || exit
+	dmenu -l "$LINES" -1 -i -fn mono-10 -g 4 -p 'Choose game:')" || exit
 
 # The directory name of the chosen game (i.e periods in-between words instead of spaces)
 gamedir="$(echo "$game" | sed 's/ /\./g')"; choice="$(echo "$game" | sed 's/ /\./g')"
@@ -40,7 +40,7 @@ if [ -e "$(ls "$gamedir"/*start* 2>/dev/null)" ]; then
 	RUN="$(ls "$gamedir"/*start*)" || exit 1
 # If the chosen game entry contains multiple game dirs, search for start scripts in those game directories instead
    elif [ -n "$(ls "$gamedir"/*/*start* 2>/dev/null)" ]; then
-	game="$(exa -D "$gamedir" | sed 's/\./ /g' | dmenu -1 -i -l 37 -fn mono-10 -o 1 -p 'Select game:')" || exit
+	game="$(exa -D "$gamedir" | sed 's/\./ /g' | dmenu -1 -i -l 37 -fn mono-10 -p 'Select game:')" || exit
 	choice="$(echo "$game" | sed 's/ /\./g')"; gamedir="$gamedir"/"$choice"
 	RUN="$(ls "$gamedir"/*start*)" || exit 1
 # Exit if no start scripts are found and send a notification
